@@ -1,0 +1,53 @@
+!==============================
+!      	  Color Scheme
+!==============================
+
+! special
+*.foreground: #a4b1cd
+*.background: #111927
+*.cursorColor: #a4b1cd
+
+! black
+*.color0: #282a2e
+*.color8: #373b41
+
+! red
+*.color1: #fe3f3e
+*.color9: #fe8485
+
+! green
+*.color2: #9fef00
+*.color10: #c5f566
+
+! yellow
+*.color3: #feaf01
+*.color11: #fecd5c
+
+! blue
+*.color4: #2f6cfe
+*.color12: #5cb3fe
+
+! magenta
+*.color5: #9e01ff
+*.color13: #cf8dfb
+
+! cyan
+*.color6: #2ee7b6
+*.color14: #5cedc7
+
+! white
+*.color7: #707880
+*.color15: #a4b1cd
+
+!==============================
+!	 URxvt Settings
+!==============================
+
+URxvt.background: [85]#111927
+URxvt.depth: 32
+URxvt.font: xft:JetBrainsMono Nerd Font:size=14
+URxvt*scrollBar: false
+URxvt.perl-ext-common: default,xkr-clipboard
+URxvt.iso14755: false
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Control-Insert: perl:clipboard:copy
