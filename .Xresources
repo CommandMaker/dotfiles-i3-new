@@ -2,42 +2,26 @@
 !      	  Color Scheme
 !==============================
 
-! special
-*.foreground: #a4b1cd
-*.background: #111927
-*.cursorColor: #a4b1cd
+*.background:  #1a2332
+*.foreground:  #a4b1cd
+*.cursorColor: #313f55
 
-! black
-*.color0: #282a2e
-*.color8: #373b41
-
-! red
-*.color1: #fe3f3e
-*.color9: #fe8485
-
-! green
-*.color2: #9fef00
-*.color10: #c5f566
-
-! yellow
-*.color3: #feaf01
-*.color11: #fecd5c
-
-! blue
-*.color4: #2f6cfe
-*.color12: #5cb3fe
-
-! magenta
-*.color5: #9e01ff
-*.color13: #cf8dfb
-
-! cyan
-*.color6: #2ee7b6
-*.color14: #5cedc7
-
-! white
-*.color7: #707880
-*.color15: #a4b1cd
+*.color0:  #000000
+*.color8:  #666666
+*.color1:  #ff3e3e
+*.color9:  #ff8484
+*.color2:  #9fef00
+*.color10: #c5f467
+*.color3:  #ffaf00
+*.color11: #ffcc5c
+*.color4:  #004cff
+*.color12: #5cb2ff
+*.color5:  #9f00ff
+*.color13: #c16cfa
+*.color6:  #2ee7b6
+*.color14: #5cecc6
+*.color7:  #ffffff
+*.color15: #ffffff
 
 !==============================
 !	 URxvt Settings
