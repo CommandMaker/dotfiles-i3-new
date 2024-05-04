@@ -1,0 +1,75 @@
+#/bin/bash
+
+set -e
+
+linkConfig() {
+    FOLDERS=($(ls $(pwd)/.config))
+
+    for folder in "${FOLDERS[@]}"; do
+	FOLDERPATH="$HOME/.config/$folder"
+    	echo "Linking folder \"$folder\" to \"$FOLDERPATH\""
+	rm -rf $FOLDERPATH
+	ln -sf $(pwd)/.config/$folder $FOLDERPATH
+    done
+
+    DOTFILES=(.Xmodmap .Xresources)
+
+    for dotfile in "${DOTFILES[@]}"; do
+    	FILEPATH="$HOME/$dotfile"
+	echo "Linking file \"$dotfile\" to \"$FILEPATH\""
+	rm -r $FILEPATH
+	ln -sf $(pwd)/$dotfile $FILEPATH
+    done
+}
+
+installPackages() {
+    echo "Installing packages from the .packages file using yay"
+    PACKAGES=""
+
+    while read -r line; do
+    	PACKAGES="$PACKAGES $line"
+    done < ".packages"
+
+    yay -S --needed $PACKAGES
+}
+
+installTerminal() {
+    echo "Building and installing st"
+    echo "Cloning st"
+    git clone https://git.suckless.org/st st/code
+
+    PATCHES=($(ls st/patches))
+    cd st/code
+
+    for PATCH in "${PATCHES[@]}"; do
+    	echo "Applying patch \"$PATCH\""
+	patch -Np1 -i ../patches/$PATCH
+	echo ""
+    done
+
+    echo "Compiling st"
+    make
+    echo "Installing st"
+    sudo make install
+    cd ../../
+}
+
+installPicom() {
+    echo "Installing picom"
+
+    git clone https://github.com/yshui/picom picom
+    cd picom
+    yay -S --needed meson ninja libconfig uthash
+
+    meson setup --buildtype=release build
+    sudo ninja -C build install
+    cd ..
+}
+
+main() {
+    linkConfig
+    installPackages
+    installPicom
+}
+
+main
