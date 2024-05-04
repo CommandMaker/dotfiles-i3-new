@@ -2,15 +2,16 @@
 
 This repository contain a small configuration made for ArchLinux and based on Xfce4 and i3wm (i3-gaps)
 
+The used theme is (HackTheBox)[https://marketplace.visualstudio.com/items?itemName=silofy.hackthebox]
+Wallpaper : Your Lie In April
+
 ## Install
 
-To install, just link the differents folders to their proper place like the `.Xmodmap` for example
+To install, just link the differents folders to their proper place like for example the `.Xmodmap` file
 
 ``` bash
 ln -sf $(pwd)/.Xmodmap ~/.Xmodmap
 ```
-
-
 ## Useful commands
 
 ### Find the keycode for a key

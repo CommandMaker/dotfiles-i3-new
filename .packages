@@ -1,9 +1,12 @@
-i3-gaps
+i3-wm
 polybar
 rofi
 xorg-xmodmap
 xorg-xrandr
 rxvt-unicode
-xfce4
 ttf-jetbrains-mono-nerd
+ttf-jetbrains-mono
+neovim
 feh
+neofetch
+lazygit
