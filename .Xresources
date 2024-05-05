@@ -31,7 +31,7 @@ URxvt.background: [85]#111927
 URxvt.depth: 32
 URxvt.font: xft:JetBrainsMono Nerd Font:size=14
 URxvt*scrollBar: false
-URxvt.perl-ext-common: default,xkr-clipboard
+URxvt.perl-ext-common: default,xkr-clipboard,selection-to-clipboard,-searchable-scrollback
 URxvt.iso14755: false
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-URxvt.keysym.Control-Insert: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard

@@ -66,10 +66,18 @@ installPicom() {
     cd ..
 }
 
+installNvim() {
+   echo "Installing Packer.nvim"
+
+   git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+   echo "Done !"
+}
+
 main() {
-    linkConfig
-    installPackages
-    installPicom
+#    linkConfig
+#    installPackages
+#    installPicom
+    installNvim
 }
 
 main
