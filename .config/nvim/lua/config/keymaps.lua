@@ -29,5 +29,6 @@ keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", silent)
 keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", silent)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", silent)
 
--- File explorer
---keymap("n", "<C-e>", "<cmd>lua require('nvim-tree.api').tree.toggle()<CR>", { silent = true, noremap = true })
+-- Telescope
+keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>", silent)
+keymap("n", "<C-Tab>", "<cmd>lua require('telescope.builtin').buffers()<CR>", silent)
