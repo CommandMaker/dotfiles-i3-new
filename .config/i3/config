@@ -23,6 +23,7 @@ exec --no-startup-id nm-applet
 exec_always ~/.config/polybar/start.sh
 exec_always picom -b
 exec_always feh --bg-fill ~/Pictures/wallpaper.jpg
+exec_always redshift -x; killall redshift; redshift
 
 
 #
@@ -50,6 +51,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 bindsym $mod+Return exec urxvt
+bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+e exec thunar
 bindsym $mod+c exec brave
 
@@ -178,3 +180,4 @@ bindsym $mod+r mode "resize"
 # Window rules
 #
 for_window [class="first-program"] floating enable
+for_window [class="poweroff-widget"] border pixel 1

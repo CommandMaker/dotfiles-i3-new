@@ -1,0 +1,1 @@
+/home/command_maker/.asdf/completions/asdf.fish
