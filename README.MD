@@ -2,7 +2,8 @@
 
 This repository contain a small configuration made for ArchLinux and based on Xfce4 and i3wm (i3-gaps)
 
-The used theme is (HackTheBox)[https://marketplace.visualstudio.com/items?itemName=silofy.hackthebox]
+The used theme is [HackTheBox](https://marketplace.visualstudio.com/items?itemName=silofy.hackthebox)
+<br>
 Wallpaper : Your Lie In April
 
 ## Install
