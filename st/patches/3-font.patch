@@ -1,0 +1,20 @@
+--- a/config.def.h	2024-05-17 22:52:05.572903681 +0200
++++ b/config.def.h	2024-05-17 22:53:41.453895995 +0200
+@@ -5,7 +5,7 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
++static char *font = "JetBrains Mono:pixelsize=19:antialias=true:autohint=true";
+ static int borderpx = 2;
+ 
+ /*
+@@ -34,7 +34,7 @@
+  *
+  * More advanced example: L" `'\"()[]{}"
+  */
+-wchar_t *worddelimiters = L" ";
++wchar_t *worddelimiters = L" `'\"()[]{}";
+ 
+ /* selection timeouts (in milliseconds) */
+ static unsigned int doubleclicktimeout = 300;

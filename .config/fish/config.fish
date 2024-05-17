@@ -56,3 +56,10 @@ alias de="USER_ID=(id -u) GROUP_ID=(id -g) docker-compose exec"
 if status is-interactive
     neofetch
 end
+
+# pnpm
+set -gx PNPM_HOME "/home/command_maker/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

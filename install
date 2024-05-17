@@ -35,19 +35,25 @@ installPackages() {
 
 installTerminal() {
     echo "Building and installing st"
-    echo "Cloning st"
-    git clone https://git.suckless.org/st st/code
+
+    rm -rf st/code
+
+    if [ ! -d "st/code" ]; then
+        echo "Cloning st"
+        git clone https://git.suckless.org/st st/code
+    fi
 
     PATCHES=($(ls st/patches))
     cd st/code
 
     for PATCH in "${PATCHES[@]}"; do
     	echo "Applying patch \"$PATCH\""
-	patch -Np1 -i ../patches/$PATCH
-	echo ""
+        patch -Np1 -i ../patches/$PATCH
+        echo ""
     done
 
     echo "Compiling st"
+    sudo make uninstall clean
     make
     echo "Installing st"
     sudo make install
@@ -77,7 +83,10 @@ main() {
 #    linkConfig
 #    installPackages
 #    installPicom
-    installNvim
+    #installNvim
+    installTerminal
 }
 
 main
+
+# vim: set ft=bash:

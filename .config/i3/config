@@ -23,7 +23,7 @@ exec --no-startup-id nm-applet
 exec_always ~/.config/polybar/start.sh
 exec_always picom -b
 exec_always feh --bg-fill ~/Pictures/wallpaper.jpg
-exec_always redshift -x; killall redshift; redshift
+exec_always killall redshift; redshift -x; redshift
 
 
 #
@@ -50,8 +50,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec urxvt
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Return exec st
+bindsym $mod+Shift+Return exec urxvt
 bindsym $mod+e exec thunar
 bindsym $mod+c exec brave
 
