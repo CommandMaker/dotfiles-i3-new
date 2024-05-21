@@ -1,4 +1,12 @@
 require('telescope').setup {
+    defaults = {
+        mappings = {
+            i = {
+                ['<C-k>'] = 'move_selection_previous',
+                ['<C-j>'] = 'move_selection_next'
+            }
+        }
+    },
     layout_config = {
         promp_position = 'top'
     },
@@ -21,7 +29,7 @@ require('telescope').setup {
         fzf = {
             override_generic_sorter = false,
             override_file_sorter = true,
-            case_mode = "smart_case",
+            case_mode = 'smart_case',
         }
     }
 }
