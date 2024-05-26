@@ -5,9 +5,8 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Colorscheme
-    use 'audibleblink/hackthebox.vim'
-    vim.cmd [[colorscheme hackthebox]]
-    vim.cmd [[hi Normal guibg=NONE]]
+    -- use 'audibleblink/hackthebox.vim'
+    use 'tiagovla/tokyodark.nvim'
 
     -- File explorer
     use 'nvim-tree/nvim-tree.lua'
@@ -64,9 +63,6 @@ require('packer').startup(function(use)
         tag = "*",
         requires = 'nvim-tree/nvim-web-devicons'
     }
-
-    -- Twig & Symfony support
-    use 'nelsyeung/twig.vim'
 
     -- Close buffer properly
     use 'echasnovski/mini.bufremove'

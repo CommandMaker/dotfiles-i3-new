@@ -63,8 +63,8 @@ installTerminal() {
 installPicom() {
     echo "Installing picom"
 
-    git clone https://github.com/yshui/picom picom
-    cd picom
+    git clone https://github.com/yshui/picom picom-build
+    cd picom-build
     yay -S --needed meson ninja libconfig uthash
 
     meson setup --buildtype=release build
