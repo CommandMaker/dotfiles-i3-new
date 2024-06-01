@@ -84,4 +84,10 @@ require('packer').startup(function(use)
             'nvimtools/none-ls.nvim',
         }
     }
+
+    -- Git diff
+    use 'sindrets/diffview.nvim'
+
+    -- Git signs in the buffer
+    use 'lewis6991/gitsigns.nvim'
 end)
