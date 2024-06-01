@@ -18,7 +18,7 @@ lspconfig.tsserver.setup {
 }
 
 lspconfig.emmet_ls.setup {
-    filetypes = { 'astro', 'css', 'eruby', 'html', 'htmldjango', 'javascriptreact', 'less', 'pug', 'sass', 'scss', 'svelte', 'typescriptreact', 'vue', 'twig', 'php' }
+    filetypes = { 'astro', 'css', 'eruby', 'html', 'htmldjango', 'javascriptreact', 'less', 'pug', 'sass', 'scss', 'svelte', 'typescriptreact', 'vue', 'twig', 'php', 'blade' }
 }
 
 for _, server in ipairs(servers) do
