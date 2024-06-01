@@ -60,10 +60,28 @@ require('packer').startup(function(use)
 
     use {
         'akinsho/bufferline.nvim',
-        tag = "*",
+        tag = '*',
         requires = 'nvim-tree/nvim-web-devicons'
     }
 
     -- Close buffer properly
     use 'echasnovski/mini.bufremove'
+
+    -- Markdown preview
+
+    use {
+        'iamcco/markdown-preview.nvim',
+        run = function() vim.fn['mkdp#util#install']() end,
+    }
+
+    -- Laravel support
+    use {
+        'adalessa/laravel.nvim',
+        requires = { 
+            'nvim-telescope/telescope.nvim',
+            'tpope/vim-dotenv',
+            'MunifTanjim/nui.nvim',
+            'nvimtools/none-ls.nvim',
+        }
+    }
 end)
