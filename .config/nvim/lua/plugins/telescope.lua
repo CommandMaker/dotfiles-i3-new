@@ -1,3 +1,10 @@
+local function filenameFirst(_, path)
+    local tail = vim.fs.basename(path)
+    local parent = vim.fs.dirname(path)
+    if parent == "." then return tail end
+    return string.format("%s\t\t%s", tail, parent)
+end
+
 require('telescope').setup {
     defaults = {
         mappings = {
@@ -5,7 +12,8 @@ require('telescope').setup {
                 ['<C-k>'] = 'move_selection_previous',
                 ['<C-j>'] = 'move_selection_next'
             }
-        }
+        },
+        file_ignore_patterns = { '.git/*', 'vendor/*', 'node_modules/*' }
     },
     layout_config = {
         promp_position = 'top'
@@ -19,7 +27,8 @@ require('telescope').setup {
     pickers = {
         find_files = {
             hidden = true,
-            no_ignore = true
+            no_ignore = true,
+            path_display = filenameFirst
         }
     },
     vimgrep_arguments = {
@@ -38,6 +47,11 @@ require('telescope').setup {
             override_generic_sorter = false,
             override_file_sorter = true,
             case_mode = 'smart_case',
+        },
+        ['ui-select'] = {
+            require('telescope.themes').get_dropdown {}
         }
     }
 }
+
+require('telescope').load_extension('ui-select')

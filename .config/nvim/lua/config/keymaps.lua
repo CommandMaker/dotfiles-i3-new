@@ -43,6 +43,7 @@ keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", silent)
 keymap("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", silent)
 keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", silent)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", silent)
+keymap("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
 -- Telescope
 keymap("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<CR>", silent)

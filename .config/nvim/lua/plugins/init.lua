@@ -5,7 +5,6 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Colorscheme
-    -- use 'audibleblink/hackthebox.vim'
     use 'tiagovla/tokyodark.nvim'
 
     -- File explorer
@@ -38,6 +37,8 @@ require('packer').startup(function(use)
             { 'nvim-lua/plenary.nvim' }
         }
     }
+
+    use 'nvim-telescope/telescope-ui-select.nvim'
 
     -- Indent blankline
     use 'lukas-reineke/indent-blankline.nvim'
