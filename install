@@ -2,24 +2,44 @@
 
 set -e
 
+installYay() {
+    if command -v yay &> /dev/null
+    then
+        return
+    fi
+
+    SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+
+    echo "Installing yay"
+    mkdir /tmp/yay
+    sudo pacman -S --needed base-devel --yes && git clone https://aur.archlinux.org/yay /tmp/yay
+    cd /tmp/yay
+    makepkg -si
+    cd $SCRIPT_DIR
+    rm -rf /tmp/yay
+    echo "Done."
+}
+
 linkConfig() {
     FOLDERS=($(ls $(pwd)/.config))
 
     for folder in "${FOLDERS[@]}"; do
-	FOLDERPATH="$HOME/.config/$folder"
-    	echo "Linking folder \"$folder\" to \"$FOLDERPATH\""
-	rm -rf $FOLDERPATH
-	ln -sf $(pwd)/.config/$folder $FOLDERPATH
+        FOLDERPATH="$HOME/.config/$folder"
+        echo "Linking folder \"$folder\" to \"$FOLDERPATH\""
+        rm -rf $FOLDERPATH
+        ln -sf $(pwd)/.config/$folder $FOLDERPATH
     done
 
     DOTFILES=(.Xmodmap .Xresources)
 
     for dotfile in "${DOTFILES[@]}"; do
-    	FILEPATH="$HOME/$dotfile"
-	echo "Linking file \"$dotfile\" to \"$FILEPATH\""
-	rm -r $FILEPATH
-	ln -sf $(pwd)/$dotfile $FILEPATH
+        FILEPATH="$HOME/$dotfile"
+        echo "Linking file \"$dotfile\" to \"$FILEPATH\""
+        rm -r $FILEPATH
+        ln -sf $(pwd)/$dotfile $FILEPATH
     done
+
+    cp wallpaper.jpg ~/Pictures/wallpaper.jpg
 }
 
 installPackages() {
@@ -27,7 +47,7 @@ installPackages() {
     PACKAGES=""
 
     while read -r line; do
-    	PACKAGES="$PACKAGES $line"
+        PACKAGES="$PACKAGES $line"
     done < ".packages"
 
     yay -S --needed $PACKAGES
@@ -47,7 +67,7 @@ installTerminal() {
     cd st/code
 
     for PATCH in "${PATCHES[@]}"; do
-    	echo "Applying patch \"$PATCH\""
+        echo "Applying patch \"$PATCH\""
         patch -Np1 -i ../patches/$PATCH
         echo ""
     done
@@ -73,17 +93,18 @@ installPicom() {
 }
 
 installNvim() {
-   echo "Installing Packer.nvim"
+    echo "Installing Packer.nvim"
 
-   git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-   echo "Done !"
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    echo "Done !"
 }
 
 main() {
-#    linkConfig
-#    installPackages
-#    installPicom
-    #installNvim
+    installYay
+    linkConfig
+    installPackages
+    installPicom
+    installNvim
     installTerminal
 }
 

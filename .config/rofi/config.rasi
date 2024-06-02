@@ -1,0 +1,51 @@
+configuration {
+    modi: "drun,run";
+    lines: 10;
+    font: "JetBrains Mono Nerd Font 14";
+    show-icons: true;
+    location: 0;
+}
+
+* {
+    text-color: #ffffff;
+}
+
+window {
+    fullscreen: false;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 35, 50, 70%);
+    padding: 100px 200px;
+}
+
+prompt {
+}
+
+element {
+    padding: 10px; 
+    margin: 10px 0;
+    background-color: rgba(26, 35, 50, 100%);
+}
+
+inputbar {
+    border: 0;
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color: transparent;
+    text-color: #ffffff;
+}
+
+element.selected.normal {
+    border-radius: 10px;
+    background-color: #313f55;
+}
+
+scrollbar {
+    margin-left: 0 0 0 10px;
+    padding: 0 0 0 15px;
+    handle-color: #313f55;
+}
+
+// vim: set ft=css:
