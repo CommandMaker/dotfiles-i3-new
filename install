@@ -12,7 +12,7 @@ installYay() {
 
     echo "Installing yay"
     mkdir /tmp/yay
-    sudo pacman -S --needed base-devel --yes && git clone https://aur.archlinux.org/yay /tmp/yay
+    sudo pacman -S --needed base-devel && git clone https://aur.archlinux.org/yay /tmp/yay
     cd /tmp/yay
     makepkg -si
     cd $SCRIPT_DIR
@@ -35,7 +35,7 @@ linkConfig() {
     for dotfile in "${DOTFILES[@]}"; do
         FILEPATH="$HOME/$dotfile"
         echo "Linking file \"$dotfile\" to \"$FILEPATH\""
-        rm -r $FILEPATH
+        rm -rf $FILEPATH
         ln -sf $(pwd)/$dotfile $FILEPATH
     done
 

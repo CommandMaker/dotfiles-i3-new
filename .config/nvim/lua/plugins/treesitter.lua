@@ -1,7 +1,7 @@
 -- Treesitter config
 
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { 'c', 'cpp', 'make', 'javascript', 'typescript', 'html', 'css', 'php', 'phpdoc', 'blade' },
+    ensure_installed = { 'c', 'cpp', 'make', 'javascript', 'typescript', 'html', 'css', 'php', 'phpdoc', 'lua' },
     highlight = {
         enable = true
     },

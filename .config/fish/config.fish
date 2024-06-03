@@ -1,5 +1,6 @@
 # Disable the CapsLock key
 setxkbmap -option caps:none
+export TERMINAL=/usr/local/bin/st
 
 # Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
 function __history_previous_command

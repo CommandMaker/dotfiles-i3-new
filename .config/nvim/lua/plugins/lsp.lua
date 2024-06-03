@@ -1,6 +1,11 @@
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local servers = { 'clangd', 'lua_ls', 'pylsp', 'cmake', 'dockerls', 'docker_compose_language_service', 'emmet_ls', 'tailwindcss', 'volar', 'intelephense', 'twiggy_language_server', 'cssls', 'css_variables' }
+local servers = { 'clangd', 'lua_ls', 'pyright', 'cmake', 'dockerls', 'docker_compose_language_service', 'emmet_ls', 'tailwindcss', 'volar', 'intelephense', 'twiggy_language_server', 'cssls', 'css_variables' }
+
+require('mason').setup {}
+require('mason-lspconfig').setup {
+    ensure_installed = servers
+}
 
 -- TypeScript requires some extra config
 lspconfig.tsserver.setup {
